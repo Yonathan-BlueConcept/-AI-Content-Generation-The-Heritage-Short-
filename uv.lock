@@ -1344,6 +1344,7 @@ dependencies = [
     { name = "httpx" },
     { name = "langchain" },
     { name = "langgraph" },
+    { name = "python-dotenv" },
     { name = "requests" },
 ]
 
@@ -1353,6 +1354,7 @@ requires-dist = [
     { name = "httpx", specifier = ">=0.28.1" },
     { name = "langchain", specifier = ">=1.5.2" },
     { name = "langgraph", specifier = ">=1.2.24" },
+    { name = "python-dotenv", specifier = ">=1.2.4" },
     { name = "requests", specifier = ">=2.34.2" },
 ]
 
