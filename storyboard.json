@@ -1,0 +1,20 @@
+{
+    "title": "First Draft Heritage Short",
+    "language": "en",
+    "shots": [
+        {
+            "id": "shot_01",
+            "duration_sec": 5,
+            "narration": "Before sunrise, the street was already awake.",
+            "visual_prompt": "Warm morning light on a quiet town street, documentary film look",
+            "reason": "Establishes setting and mood"
+        },
+        {
+            "id": "shot_02",
+            "duration_sec": 6,
+            "narration": "Every repair started with listening closely.",
+            "visual_prompt": "Close-up of hands adjusting a vintage radio dial on a wooden table",
+            "reason": "Introduces central craft and motif"
+        }
+    ]
+}
