@@ -1,20 +1,30 @@
 {
-    "title": "First Draft Heritage Short",
-    "language": "en",
-    "shots": [
-        {
-            "id": "shot_01",
-            "duration_sec": 5,
-            "narration": "Before sunrise, the street was already awake.",
-            "visual_prompt": "Warm morning light on a quiet town street, documentary film look",
-            "reason": "Establishes setting and mood"
+    "project": {
+        "id": "bono_heritage_short",
+        "title": "BONO: The Water That Connected Us",
+        "description": "A cinematic documentary reconstruction of a village's historic communal water source.",
+        "target_duration_sec": 63,
+        "aspect_ratios": [
+            "9:16",
+            "16:9"
+        ]
+    },
+    "production": {
+        "image_model": "cloudflare-flux-2-klein-4b",
+        "video_model": "stable-video-diffusion-xt",
+        "max_clip_duration_sec": 3
+    },
+    "audio": {
+        "narration": {
+            "enabled": true,
+            "language": "am",
+            "style": "reflective_documentary",
+            "voice_description": ""
         },
-        {
-            "id": "shot_02",
-            "duration_sec": 6,
-            "narration": "Every repair started with listening closely.",
-            "visual_prompt": "Close-up of hands adjusting a vintage radio dial on a wooden table",
-            "reason": "Introduces central craft and motif"
+        "music": {
+            "enabled": true,
+            "prompt": ""
         }
-    ]
+    },
+    "shots": []
 }
