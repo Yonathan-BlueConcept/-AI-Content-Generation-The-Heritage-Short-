@@ -1,0 +1,57 @@
+{
+  "project": {
+    "id": "bono_pipeline_test",
+    "title": "BONO: The Water That Connected Us",
+    "description": "A reflective documentary reconstruction of BONO, a communal drinking-water source in an Ethiopian village in the early 2000s.",
+    "target_duration_sec": 6,
+    "aspect_ratios": [
+      "9:16",
+      "16:9"
+    ]
+  },
+  "production": {
+    "image_model": "cloudflare-flux-2-klein-4b",
+    "video_model": "stable-video-diffusion-xt",
+    "max_clip_duration_sec": 3
+  },
+  "audio": {
+    "narration": {
+      "enabled": true,
+      "language": "am",
+      "style": "reflective_documentary",
+      "voice_description": "Natural Amharic voice, calm, warm, reflective and sincere. Measured pace, gentle emotional delivery, like someone remembering an important part of village life."
+    },
+    "music": {
+      "enabled": true,
+      "prompt": "Original reflective documentary score inspired by the emotional atmosphere of rural Ethiopian village life in the early 2000s. Gentle traditional Ethiopian instrumental textures, subtle krar-inspired plucked strings, warm ambient atmosphere, restrained percussion, nostalgic and hopeful. No vocals. Gradual emotional development, with a quiet ending. Keep space for narration."
+    }
+  },
+  "shots": [
+    {
+      "id": "shot_01",
+      "duration_sec": 3,
+      "visual_prompt": "Over-the-shoulder close-up of an Ethiopian weaver's hands guiding a wooden shuttle through crisp white cotton threads on a traditional floor loom inside a dimly lit workshop. Dust motes floating in a single shaft of afternoon sunlight through a wooden window. Rich natural textures, 35mm documentary film look. No identifiable faces.",
+      "motion_prompt": "Smooth rhythmic camera push-in toward the moving shuttle and taut cotton threads. Natural motion of the hands and wooden loom. Keep the face out of frame.",
+      "narration_am": "እያንዳንዱ ክር በትዕግሥትና በጥበብ ይሸመን ነበር።",
+      "subtitle_en": "Every thread was woven with patience and skill.",
+      "reason": "Captures the craftsmanship and quiet focus of traditional handloom weaving.",
+      "generation": {
+        "image": true,
+        "video": true
+      }
+    },
+    {
+      "id": "shot_02",
+      "duration_sec": 3,
+      "visual_prompt": "Warm interior view of a vintage 1970s Addis Ababa record shop with wooden shelves packed with vinyl sleeves and cassette tapes, a spinning turntable in the foreground, and soft tungsten lamp light. Retro Amharic signage softly blurred in the background. Nostalgic cinematic documentary aesthetic. No identifiable faces.",
+      "motion_prompt": "Slow lateral pan across the spinning vinyl record toward the rows of stacked record sleeves. Subtle movement of the tonearm and warm ambient light.",
+      "narration_am": "በከተማዋ ምሽቶች ሙዚቃ ነፍስን ያድስ ነበር።",
+      "subtitle_en": "On city evenings, music refreshed the soul.",
+      "reason": "Establishes the vibrant urban cultural atmosphere of the era.",
+      "generation": {
+        "image": true,
+        "video": true
+      }
+    }
+  ]
+}

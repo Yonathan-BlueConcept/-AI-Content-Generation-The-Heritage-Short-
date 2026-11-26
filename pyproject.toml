@@ -1,15 +1,11 @@
 [project]
 name = "theheritageshort"
 version = "0.1.0"
-description = "Add your description here"
+description = "A reproducible AI-powered documentary film production pipeline."
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "fastapi[standard]>=0.165.0",
-    "httpx>=0.28.1",
     "jsonschema>=4.26.0",
-    "langchain>=1.5.2",
-    "langgraph>=1.2.24",
     "python-dotenv>=1.2.4",
     "requests>=2.34.2",
 ]

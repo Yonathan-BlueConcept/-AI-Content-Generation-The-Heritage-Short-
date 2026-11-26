@@ -11,3 +11,4 @@ wheels/
 .env
 assets/
 outputs/
+shots_container.json

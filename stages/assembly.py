@@ -399,10 +399,13 @@ def assemble_format(
         .replace("'", r"\'")
     )
 
+    subtitle_size = 18 if format_name == "vertical" else 31
+    subtitle_margin = 65 if format_name == "vertical" else 55
+
     subtitle_filter = (
         f"subtitles=filename='{subtitle_filter_path}':"
-        "force_style='FontName=Arial,FontSize=36,"
-        "Outline=2,Shadow=1,Alignment=2,MarginV=55'"
+        f"force_style='FontName=Arial,FontSize={subtitle_size},"
+        f"Outline=2,Shadow=1,Alignment=2,MarginV={subtitle_margin}'"
     )
 
     total_duration = sum(item["duration"] for item in timeline)
@@ -468,9 +471,15 @@ def assemble_format(
     print(f"  Duration: {final_duration:.2f}s")
 
 
-def assemble_film(force: bool = False) -> None:
-    """Main assembly entry point."""
-    storyboard = validate_storyboard()
+def assemble_film(
+    force: bool = False,
+    storyboard: dict | None = None,
+) -> None:
+    """Assemble the final films from a supplied or production storyboard."""
+
+    if storyboard is None:
+        storyboard = validate_storyboard()
+
     validate_production_readiness(storyboard)
 
     print("\nChecking required production assets...")

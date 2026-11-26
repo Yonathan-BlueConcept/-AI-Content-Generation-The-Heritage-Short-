@@ -78,8 +78,13 @@ def append_run_log(record: dict) -> None:
         )
 
 
-def generate_soundtrack(force: bool = False) -> None:
-    storyboard = validate_storyboard()
+def generate_soundtrack(
+    force: bool = False,
+    storyboard: dict | None = None,
+) -> None:
+    if storyboard is None:
+        storyboard = validate_storyboard()
+
     validate_production_readiness(storyboard)
 
     music_config = storyboard["audio"]["music"]
@@ -123,7 +128,8 @@ def generate_soundtrack(force: bool = False) -> None:
     record = {
         "timestamp": timestamp,
         "stage": "music",
-        "shot": None,
+        "shot_id": None,
+        "seed": None,
         "model": MODEL,
         "parameters": {
             "prompt": prompt,
@@ -132,7 +138,7 @@ def generate_soundtrack(force: bool = False) -> None:
             "steps": STEPS,
             "output_format": OUTPUT_FORMAT,
         },
-        "latency_seconds": None,
+        "latency_sec": None,
         "cost": None,
         "status": "failed",
         "output": str(
@@ -150,11 +156,13 @@ def generate_soundtrack(force: bool = False) -> None:
 
         latency = round(time.monotonic() - started_at, 2)
 
+
+
         record.update({
             "generation_id": result["generation_id"],
-            "seed_used": result.get("seed"),
+            "seed": result.get("seed"),
+            "latency_sec": latency,
             "content_type": result.get("content_type"),
-            "latency_seconds": latency,
             "status": "success",
             "size_bytes": result["size_bytes"],
         })
@@ -181,8 +189,8 @@ def generate_soundtrack(force: bool = False) -> None:
         raise
 
     finally:
-        if record["latency_seconds"] is None:
-            record["latency_seconds"] = round(
+        if record["latency_sec"] is None:
+            record["latency_sec"] = round(
                 time.monotonic() - started_at,
                 2,
             )

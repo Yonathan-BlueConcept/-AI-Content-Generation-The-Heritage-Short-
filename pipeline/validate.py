@@ -1,3 +1,4 @@
+
 import math
 import json
 from pathlib import Path
@@ -33,11 +34,37 @@ def load_json(path: Path) -> dict:
         ) from exc
 
 
-def validate_storyboard() -> dict:
-    """Load and validate the project storyboard."""
+def validate_storyboard(
+    storyboard_path: Path = STORYBOARD_PATH,
+    duration_range: tuple[int, int] = (60, 90),
+) -> dict:
+    """
+    Load and validate a storyboard.
 
-    storyboard = load_json(STORYBOARD_PATH)
+    Production defaults:
+        duration_range=(60, 90)
+
+    Short test fixture:
+        duration_range=(1, 90)
+    """
+
+    min_duration, max_duration = duration_range
+
+    if min_duration <= 0 or max_duration < min_duration:
+        raise ValueError("Invalid storyboard duration range.")
+
+    storyboard = load_json(storyboard_path)
     schema = load_json(SCHEMA_PATH)
+
+    # Apply the requested duration range to an in-memory
+    # copy of the schema. The original schema file is untouched.
+    duration_schema = (
+        schema["properties"]["project"]["properties"]
+        ["target_duration_sec"]
+    )
+
+    duration_schema["minimum"] = min_duration
+    duration_schema["maximum"] = max_duration
 
     validator = Draft202012Validator(schema)
 
@@ -60,7 +87,7 @@ def validate_storyboard() -> dict:
             + "\n".join(messages)
         )
 
-    print("Storyboard validation: PASSED")
+    print(f"Storyboard validation: PASSED ({storyboard_path.name})")
 
     return storyboard
 
@@ -115,7 +142,7 @@ def validate_production_readiness(storyboard: dict) -> None:
                     f"{shot['id']}: English subtitle is missing."
                 )
 
-    # 5. Calculate how many generated clips each shot requires.
+    # 5. Calculate required generated clips per shot.
     max_clip_duration = production["max_clip_duration_sec"]
 
     for shot in shots:
@@ -136,7 +163,6 @@ def validate_production_readiness(storyboard: dict) -> None:
 
     print(f"Total storyboard duration: {total_duration}s")
     print("Production readiness validation: PASSED")
-
 
 
 if __name__ == "__main__":

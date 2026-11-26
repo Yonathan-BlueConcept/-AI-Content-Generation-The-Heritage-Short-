@@ -144,7 +144,8 @@ def generate_narration(
         record = {
             "timestamp": timestamp,
             "stage": "narration",
-            "shot": shot_id,
+            "shot_id": shot_id,
+            "seed": None,
             "model": MODEL,
             "parameters": {
                 "voice_id": VOICE_ID,
@@ -156,7 +157,7 @@ def generate_narration(
                 ).hexdigest(),
                 "client_request_id": request_id,
             },
-            "latency_seconds": None,
+            "latency_sec": None,
             "cost": None,
             "status": "failed",
             "output": relative_output,
@@ -200,7 +201,7 @@ def generate_narration(
                     "estimated_cost"
                 ),
                 "cost": actual_cost,
-                "latency_seconds": latency,
+                "latency_sec": latency,
                 "status": "success",
                 "size_bytes": result["size_bytes"],
             })
@@ -224,7 +225,7 @@ def generate_narration(
             print(f"{shot_id}: FAILED - {exc}")
 
         finally:
-            record["latency_seconds"] = round(
+            record["latency_sec"] = round(
                 time.monotonic() - started_at, 2
             )
             append_run_log(record)
