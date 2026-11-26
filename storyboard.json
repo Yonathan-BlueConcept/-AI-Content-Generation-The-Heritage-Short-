@@ -2,7 +2,7 @@
     "project": {
         "id": "bono_heritage_short",
         "title": "BONO: The Water That Connected Us",
-        "description": "A cinematic documentary reconstruction of a village's historic communal water source.",
+        "description": "A reflective documentary reconstruction of BONO, a communal drinking-water source in an Ethiopian village in the early 2000s.",
         "target_duration_sec": 63,
         "aspect_ratios": [
             "9:16",
@@ -19,12 +19,286 @@
             "enabled": true,
             "language": "am",
             "style": "reflective_documentary",
-            "voice_description": ""
+            "voice_description": "Natural Amharic voice, calm, warm, reflective and sincere. Measured pace, gentle emotional delivery, like someone remembering an important part of village life."
         },
         "music": {
             "enabled": true,
-            "prompt": ""
+            "prompt": "Original reflective documentary score inspired by the emotional atmosphere of rural Ethiopian village life in the early 2000s. Gentle traditional Ethiopian instrumental textures, subtle krar-inspired plucked strings, warm ambient atmosphere, restrained percussion, nostalgic and hopeful. No vocals. Gradual emotional development, with a quiet ending. Keep space for narration."
         }
     },
-    "shots": []
+    "shots": [
+        {
+            "id": "shot_01",
+            "duration_sec": 3,
+            "visual_prompt": "Wide cinematic establishing view of a modest Ethiopian village in the early 2000s before sunrise. Concrete-block houses, corrugated iron roofs, dusty unpaved paths, sparse vegetation. Historically plausible everyday residential environment. No modern buildings or vehicles. Warm natural documentary cinematography. No identifiable faces.",
+            "motion_prompt": "Very slow cinematic forward camera movement along the quiet village path. Subtle natural movement in the environment. Stable documentary camera.",
+            "narration_am": "በዚያን ዘመን፣ ንጹህ ውሃ ማግኘት ከባድ ነበር።",
+            "subtitle_en": "In those days, getting clean water was difficult.",
+            "reason": "Establishes the historical setting and the central problem.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_02",
+            "duration_sec": 3,
+            "visual_prompt": "Rear view of a faceless Ethiopian villager in simple early-2000s everyday clothing walking along a dusty rural village path carrying an empty yellow plastic water jerrycan. Modest houses in the background. Realistic documentary reconstruction.",
+            "motion_prompt": "The person walks slowly away from the camera. Gentle natural movement of the yellow jerrycan. Keep the face outside the frame.",
+            "narration_am": "ሁሉም ውሃ ፍለጋ ላይ ነበር።",
+            "subtitle_en": "The search for water began with a journey.",
+            "reason": "Shows the effort involved in obtaining drinking water.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_03",
+            "duration_sec": 3,
+            "visual_prompt": "Cinematic close-up of an empty yellow plastic water jerrycan being carried by hand along a dusty village path. Focus on the container, hand and footsteps. Rural Ethiopian environment, early 2000s, warm natural light, no visible faces.",
+            "motion_prompt": "Gentle handheld tracking movement following the walking person's hand and jerrycan. Natural subtle movement only.",
+            "narration_am": "ቢጫ ጀሪካኖች ባዶ ሆነው ይወሉ ነበር።",
+            "subtitle_en": "Yellow jerrycans were carried there empty.",
+            "reason": "Introduces a recognizable everyday object from the period.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_04",
+            "duration_sec": 3,
+            "visual_prompt": "Several faceless villagers, seen from behind, walking from different dusty paths toward one central location in a modest Ethiopian village in the early 2000s. Each carries a yellow plastic water jerrycan. Wide documentary composition, natural warm daylight.",
+            "motion_prompt": "Slow camera movement toward the central gathering point as the villagers walk naturally. No exaggerated movement.",
+            "narration_am": "ለብዙ ቤተሰቦች፣ አንድ የጋራ ምንጭ ነበር።",
+            "subtitle_en": "Many families shared one water source.",
+            "reason": "Introduces the importance of a single communal source.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_05",
+            "duration_sec": 3,
+            "visual_prompt": "First cinematic reveal of BONO: one large silver metal water tap mounted on a simple rough concrete wall in the center of an Ethiopian village in the early 2000s. The tap is the main subject. A few yellow plastic jerrycans nearby. Historically plausible, realistic materials, documentary cinematography.",
+            "motion_prompt": "Slow cinematic camera approach toward the single silver tap. Keep the tap and concrete wall visually consistent.",
+            "narration_am": "ያ ቦታ ቦኖ ይባል ነበር።",
+            "subtitle_en": "That place was called BONO.",
+            "reason": "Reveals the central subject of the documentary.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_06",
+            "duration_sec": 3,
+            "visual_prompt": "Detailed close-up of one large silver metal water tap fixed directly to a rough concrete wall. A simple tap with no electronic controller, no multiple outlets and no modern plumbing fixtures. Ethiopian village setting, early 2000s, photorealistic documentary reconstruction.",
+            "motion_prompt": "Slow cinematic push toward the silver tap. Subtle water movement. Preserve the tap's exact shape and position.",
+            "narration_am": "በኮንክሪት ግድግዳ ላይ ያለ ትልቅ ቧንቧ ነበር።",
+            "subtitle_en": "A single large tap stood on a concrete wall.",
+            "reason": "Establishes the remembered physical appearance of BONO.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_07",
+            "duration_sec": 3,
+            "visual_prompt": "Close-up of clear groundwater continuously flowing from a single large silver metal tap into a yellow plastic jerrycan. Rough concrete wall visible behind the tap. Realistic water texture and natural daylight. Photorealistic documentary style.",
+            "motion_prompt": "Continuous natural water flow into the stationary yellow jerrycan. Gentle camera movement, realistic fluid motion.",
+            "narration_am": "ውሃው ቀንና ሌሊት ይፈስ ነበር።",
+            "subtitle_en": "The water flowed day and night.",
+            "reason": "Shows the continuous groundwater supply.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_08",
+            "duration_sec": 3,
+            "visual_prompt": "Wide documentary shot of villagers collecting drinking water from one large silver tap mounted on a concrete wall. Several yellow plastic jerrycans are visible. People are seen from behind or at a distance, with no identifiable faces. Authentic early-2000s Ethiopian village.",
+            "motion_prompt": "Subtle natural movement of people waiting and collecting water. Keep the tap as the visual center.",
+            "narration_am": "ሰዎች የመጠጥ ውሃቸውን እዚያ ያገኙ ነበር።",
+            "subtitle_en": "People collected their drinking water there.",
+            "reason": "Explains BONO's primary practical purpose.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_09",
+            "duration_sec": 3,
+            "visual_prompt": "Rear documentary view of two villagers approaching the BONO water point carrying yellow plastic jerrycans. One large silver tap on a concrete wall is visible ahead. Early-2000s Ethiopian village, simple clothing, no identifiable faces.",
+            "motion_prompt": "Slow natural walking movement toward the water point. Gentle tracking camera, no sudden motion.",
+            "narration_am": "ቢጫ ጀሪካኖቻቸውን ይዘው ይመጡ ነበር።",
+            "subtitle_en": "They came carrying their yellow jerrycans.",
+            "reason": "Establishes the familiar routine of visiting BONO.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_10",
+            "duration_sec": 3,
+            "visual_prompt": "Documentary medium shot of two faceless villagers greeting one another while waiting beside the BONO water point. Seen from behind and side angles, simple early-2000s clothing, yellow plastic jerrycans nearby, concrete wall and single silver tap in the background.",
+            "motion_prompt": "Small natural hand gestures as the villagers greet one another. Gentle camera movement, no visible faces.",
+            "narration_am": "በተራ ሲጠብቁ፣ ሰላምታ ይለዋወጡ ነበር።",
+            "subtitle_en": "While waiting, they exchanged greetings.",
+            "reason": "Introduces the social dimension of BONO.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_11",
+            "duration_sec": 3,
+            "visual_prompt": "A small group of villagers standing together near the BONO water point, talking casually while waiting for drinking water. Documentary view from behind, simple everyday clothing, yellow jerrycans and one silver tap against a concrete wall. Warm natural light, no identifiable faces.",
+            "motion_prompt": "Subtle conversational gestures and natural body movement. Keep the scene calm and observational.",
+            "narration_am": "አንዳንዶች ይወያዩ፣ አንዳንዶች ይስቁ ነበር።",
+            "subtitle_en": "Some talked, while others shared a laugh.",
+            "reason": "Shows the ordinary human connections formed at BONO.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_12",
+            "duration_sec": 3,
+            "visual_prompt": "Close documentary composition of a yellow plastic jerrycan being filled with clear water from the single silver tap. In the soft background, villagers wait and talk. Rough concrete wall, natural light, photorealistic early-2000s setting.",
+            "motion_prompt": "Steady water flow into the jerrycan, with subtle background movement from waiting villagers. Stable close-up.",
+            "narration_am": "ቦኖ የውሃ ቦታ ብቻ አልነበረም።",
+            "subtitle_en": "BONO was more than a place for water.",
+            "reason": "Transitions from the practical purpose to the social meaning.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_13",
+            "duration_sec": 3,
+            "visual_prompt": "Two villagers seen from behind standing together beside BONO, one holding a filled yellow jerrycan. The other makes a gentle conversational gesture. Single silver tap and concrete wall remain visible. Reflective documentary cinematography, no identifiable faces.",
+            "motion_prompt": "Slow natural movement as the villagers interact briefly before leaving. Subtle camera drift.",
+            "narration_am": "ሰዎችንም የሚያገናኝ ቦታ ነበር።",
+            "subtitle_en": "It was also a place that brought people together.",
+            "reason": "Expresses the emotional center of the film.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_14",
+            "duration_sec": 3,
+            "visual_prompt": "Rear view of a villager carrying a filled yellow plastic water jerrycan away from the BONO water point along a dusty path. Modest early-2000s Ethiopian village houses, warm daylight, natural documentary realism.",
+            "motion_prompt": "The person walks slowly away from the camera with the filled jerrycan. Gentle tracking movement.",
+            "narration_am": "የተሞሉ ጀሪካኖች ወደ ቤት ይመለሱ ነበር።",
+            "subtitle_en": "Filled jerrycans were carried back home.",
+            "reason": "Connects the communal source to everyday household life.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_15",
+            "duration_sec": 3,
+            "visual_prompt": "Wide cinematic view of BONO as part of ordinary village life. One large silver tap on a concrete wall, yellow jerrycans, a few faceless villagers collecting water. Authentic early-2000s Ethiopian village, natural warm light, realistic documentary composition.",
+            "motion_prompt": "Slow lateral camera movement across the familiar water point. Subtle activity, no exaggerated action.",
+            "narration_am": "ይህ የዕለት ተዕለት ሕይወት ክፍል ነበር።",
+            "subtitle_en": "It was part of everyday life.",
+            "reason": "Shows how naturally BONO fitted into village routines.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_16",
+            "duration_sec": 3,
+            "visual_prompt": "Two separate villagers at BONO, one approaching with an empty yellow jerrycan and another leaving with a filled one. The single silver tap and concrete wall remain central. Faceless documentary composition, early-2000s Ethiopian village.",
+            "motion_prompt": "One person slowly approaches while the other walks away. Natural independent movements, stable camera.",
+            "narration_am": "አንዱ ይመጣል፣ ሌላው ይሄዳል።",
+            "subtitle_en": "One person arrived; another went home.",
+            "reason": "Communicates the continuous daily rhythm around BONO.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_17",
+            "duration_sec": 3,
+            "visual_prompt": "Reflective close-up of the same single large silver BONO tap continuously releasing clear water. A yellow jerrycan sits below it. Warm late-afternoon sunlight touches the rough concrete wall. Photorealistic documentary reconstruction.",
+            "motion_prompt": "Steady continuous water flow. Very slow camera push toward the tap, calm and uninterrupted.",
+            "narration_am": "ውሃው ግን መፍሰሱን አያቆምም ነበር።",
+            "subtitle_en": "But the water never stopped flowing.",
+            "reason": "Creates a visual and emotional transition toward the ending.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_18",
+            "duration_sec": 3,
+            "visual_prompt": "Quiet wide view of a modest Ethiopian village in the present day, seen in warm late-afternoon light. Dusty path, simple houses and still surroundings. No visible BONO tap. Reflective documentary composition, no identifiable faces.",
+            "motion_prompt": "Very slow camera movement along the quiet village path. Minimal environmental motion.",
+            "narration_am": "ጊዜ አለፈ።",
+            "subtitle_en": "Time passed.",
+            "reason": "Moves the film from historical reconstruction toward the present.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_19",
+            "duration_sec": 3,
+            "visual_prompt": "A quiet, empty village environment with no visible water tap or water point. A simple documentary composition suggesting the absence of a once-familiar place, without claiming to depict the exact demolished BONO location. Natural muted colors, reflective atmosphere.",
+            "motion_prompt": "Slow gentle pullback from the empty scene. Keep the environment still and understated.",
+            "narration_am": "ቦኖም ፈረሰ።",
+            "subtitle_en": "BONO was eventually demolished.",
+            "reason": "Acknowledges that the original water point no longer exists.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_20",
+            "duration_sec": 3,
+            "visual_prompt": "Cinematic close-up of a person's hands gently holding an old yellow plastic water jerrycan. The person is seen only through hands and clothing, no face. Warm soft light, nostalgic documentary mood, simple rural Ethiopian surroundings.",
+            "motion_prompt": "Very subtle movement of the hands holding the jerrycan. Slow cinematic camera push, restrained and emotional.",
+            "narration_am": "ግን ትዝታው አልጠፋም።",
+            "subtitle_en": "But its memory did not disappear.",
+            "reason": "Connects the physical object to personal and collective memory.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        },
+        {
+            "id": "shot_21",
+            "duration_sec": 3,
+            "visual_prompt": "Final wide cinematic view of an Ethiopian village at sunset, warm natural light over modest houses and a quiet dusty path. Reflective, nostalgic documentary ending. Leave clean negative space for a title overlay. No text, no logos, no watermark.",
+            "motion_prompt": "Very slow cinematic pullback. The scene settles into a calm final frame with no sudden movement.",
+            "narration_am": "ቦኖ በልባችን ውስጥ ይኖራል።",
+            "subtitle_en": "BONO lives on in our memories.",
+            "reason": "Provides an emotional conclusion and space for the film's end card.",
+            "generation": {
+                "image": true,
+                "video": true
+            }
+        }
+    ]
 }

@@ -1,4 +1,4 @@
-
+import math
 import json
 from pathlib import Path
 
@@ -65,9 +65,84 @@ def validate_storyboard() -> dict:
     return storyboard
 
 
+def validate_production_readiness(storyboard: dict) -> None:
+    """Check whether a valid storyboard is ready for production."""
+
+    errors = []
+
+    project = storyboard["project"]
+    production = storyboard["production"]
+    audio = storyboard["audio"]
+    shots = storyboard["shots"]
+
+    # 1. At least one shot must exist.
+    if not shots:
+        errors.append("The storyboard must contain at least one shot.")
+
+    # 2. Shot IDs must be unique.
+    shot_ids = [shot["id"] for shot in shots]
+
+    if len(shot_ids) != len(set(shot_ids)):
+        errors.append("Shot IDs must be unique.")
+
+    # 3. Total shot duration must match the target duration.
+    total_duration = sum(
+        shot["duration_sec"] for shot in shots
+    )
+
+    target_duration = project["target_duration_sec"]
+
+    if not math.isclose(
+        total_duration,
+        target_duration,
+        abs_tol=0.01
+    ):
+        errors.append(
+            f"Total shot duration is {total_duration}s, "
+            f"but target duration is {target_duration}s."
+        )
+
+    # 4. Check narration and subtitles when narration is enabled.
+    if audio["narration"]["enabled"]:
+        for shot in shots:
+            if not shot["narration_am"].strip():
+                errors.append(
+                    f"{shot['id']}: Amharic narration is missing."
+                )
+
+            if not shot["subtitle_en"].strip():
+                errors.append(
+                    f"{shot['id']}: English subtitle is missing."
+                )
+
+    # 5. Calculate how many generated clips each shot requires.
+    max_clip_duration = production["max_clip_duration_sec"]
+
+    for shot in shots:
+        required_clips = math.ceil(
+            shot["duration_sec"] / max_clip_duration
+        )
+
+        print(
+            f"{shot['id']}: {shot['duration_sec']}s "
+            f"-> {required_clips} generated clip(s)"
+        )
+
+    if errors:
+        raise StoryboardValidationError(
+            "Production readiness validation failed:\n"
+            + "\n".join(f"- {error}" for error in errors)
+        )
+
+    print(f"Total storyboard duration: {total_duration}s")
+    print("Production readiness validation: PASSED")
+
+
+
 if __name__ == "__main__":
     try:
-        validate_storyboard()
+        storyboard = validate_storyboard()
+        validate_production_readiness(storyboard)
 
     except StoryboardValidationError as exc:
         print(exc)
