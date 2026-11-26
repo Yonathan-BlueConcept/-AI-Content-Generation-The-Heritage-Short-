@@ -402,13 +402,41 @@ def assemble_format(
     subtitle_size = 18 if format_name == "vertical" else 31
     subtitle_margin = 65 if format_name == "vertical" else 55
 
+    
+    total_duration = sum(item["duration"] for item in timeline)
+    end_card_start = max(0.0, total_duration - 3.0)
+
+    
     subtitle_filter = (
         f"subtitles=filename='{subtitle_filter_path}':"
         f"force_style='FontName=Arial,FontSize={subtitle_size},"
-        f"Outline=2,Shadow=1,Alignment=2,MarginV={subtitle_margin}'"
+        f"Outline=2,Shadow=1,Alignment=2,MarginV={subtitle_margin}',"
+        f"drawbox=x=0:y=0:w=iw:h=ih:color=black:t=fill:"
+        f"enable='gte(t,{end_card_start:.3f})',"
+        f"drawtext=fontfile='C\\:/Windows/Fonts/arial.ttf':"
+        f"text='BONO':"
+        f"fontcolor=white:fontsize=h*0.075:"
+        f"x=(w-text_w)/2:y=h*0.30:"
+        f"enable='gte(t,{end_card_start:.3f})',"
+        f"drawtext=fontfile='C\\:/Windows/Fonts/arial.ttf':"
+        f"text='THE WATER THAT CONNECTED US':"
+        f"fontcolor=white:fontsize=h*0.025:"
+        f"x=(w-text_w)/2:y=h*0.40:"
+        f"enable='gte(t,{end_card_start:.3f})',"
+        f"drawtext=fontfile='C\\:/Windows/Fonts/arial.ttf':"
+        f"text='AI-GENERATED CONTENT':"
+        f"fontcolor=white:fontsize=h*0.035:"
+        f"x=(w-text_w)/2:y=h*0.57:"
+        f"enable='gte(t,{end_card_start:.3f})',"
+        f"drawtext=fontfile='C\\:/Windows/Fonts/arial.ttf':"
+        f"text='Visuals and narration and music created with AI.':"
+        f"fontcolor=white:fontsize=h*0.018:"
+        f"x=(w-text_w)/2:y=h*0.65:"
+        f"enable='gte(t,{end_card_start:.3f})'"
     )
 
-    total_duration = sum(item["duration"] for item in timeline)
+
+    
 
     print("  Adding subtitles and mixing background music...")
 
